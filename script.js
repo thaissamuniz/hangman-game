@@ -5,6 +5,20 @@ const playedLettersEl = document.querySelector('#spLetrasJogadas');
 const img = document.querySelector('#imgForca');
 userAns.focus();
 
+// const lugar = document.createElement('div');
+// lugar.style.borderBottom = '1px solid black';
+// lugar.style.width = '20px';
+// lugar.style.marginBottom = '10px';
+
+//playedLettersEl.appendChild(lugar);
+
+
+
+const lugar2 = document.createElement('div');
+lugar2.style.borderBottom = '1px solid black';
+lugar2.style.width = '20px';
+lugar2.style.margin = '10px';
+
 const jogo = {
   randomWord: '',
   playedLetters: [],
@@ -53,12 +67,12 @@ const rmvAttributes = () => {
 
 //Função refatorada com 5 sentenças
 checkBtn.addEventListener('click', () => {
-  showLetters();
+  showPlayedLetters();
   userAns.focus();
   userAns.value = '';
 });
 
-const showLetters = () => {
+const showPlayedLetters = () => {
   let letter = userAns.value;
   jogo.playedLetters.push(letter);
   playedLettersEl.innerText = jogo.playedLetters;
@@ -99,16 +113,14 @@ const youLose = () => {
 
 //Função refatorada com 5 sentenças
 const revealsLetter = () => {
-  let palavraArr = jogo.randomWord.split('');
+  let palavraArr = [...jogo.randomWord];
   replaceLetter(palavraArr);
   checkWord(palavraArr);
 }
 
 const replaceLetter = (word) => {
   while (jogo.newArr.length == 0) {
-    word.forEach((_, i) => {
-      jogo.newArr[i] = '_';
-    });
+    word.forEach((_, i) => jogo.newArr[i] = '_');
   }
 }
 

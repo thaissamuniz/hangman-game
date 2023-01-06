@@ -27,6 +27,10 @@ const jogo = {
   counter: 0,
 }
 
+if (jogo.playedLetters == 0) {
+  checkBtn.disabled = 'true'
+}
+
 const palavras = [
   "macaco", "elefante", "baleia", "cachorro"
 ];
@@ -75,7 +79,7 @@ checkBtn.addEventListener('click', () => {
 const showPlayedLetters = () => {
   let letter = userAns.value;
   jogo.playedLetters.push(letter);
-  playedLettersEl.innerText = jogo.playedLetters;
+  playedLettersEl.innerText = `letras jogadas: ${jogo.playedLetters}`;
   verifyLetter();
 }
 

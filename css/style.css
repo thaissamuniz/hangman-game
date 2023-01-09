@@ -12,6 +12,10 @@ body {
     background-repeat: no-repeat;
 }
 
+#imgForca {
+    width: 276px;
+}
+
 h1{
     text-align: center;
     font-size: 56px;

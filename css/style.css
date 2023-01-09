@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
 
 #imgForca {
     width: 276px;
+    margin-bottom: 50px;
 }
 
 h1{
@@ -89,4 +91,44 @@ button:disabled{
     background-color: black;
     color: white;
     cursor: not-allowed;
+}
+
+p {
+    font-size: 25px;
+}
+
+@media (max-width: 1440px){
+    body {
+        background-image: none;
+    }
+
+    h1 {
+        margin-bottom: 40px;
+    }
+
+    main {
+        padding: 25px;
+    }
+
+
+    #imgForca {
+        margin-bottom: 0;
+        width: 176px;
+    }
+
+    .container {
+        display: block;
+        height: 222px;
+        margin-bottom: 40px;
+    }
+
+    #spPalavraSecreta { 
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    button, #ipPalavraResposta {
+        width: 100px;
+    }
+
 }
